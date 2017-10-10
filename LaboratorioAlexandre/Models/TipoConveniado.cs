@@ -7,5 +7,7 @@ namespace LaboratorioAlexandre.Models
 {
     public enum TipoConveniado
     {
+        Dependente = 1,
+        Titular = 2
     }
 }
