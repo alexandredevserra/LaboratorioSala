@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using LaboratorioAlexandre.Models;
 
 namespace LaboratorioAlexandre.Controllers
 {
@@ -11,7 +12,8 @@ namespace LaboratorioAlexandre.Controllers
         // GET: Cidade
         public ActionResult Listar()
         {
-            return View();
+            IList<Cidade> cidades = new Cidade().GetAll();
+            return View(cidades);
         }
     }
 }

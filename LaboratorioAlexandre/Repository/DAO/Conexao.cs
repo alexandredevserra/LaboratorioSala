@@ -10,7 +10,7 @@ namespace LaboratorioAlexandre.Repository.DAO
 {
     public class Conexao
     {
-        private SqlConnection Conectar()
+        private static SqlConnection Conectar()
         {
             //Para poder ter acesso ao BD
             string stringConexao = ConfigurationManager.ConnectionStrings["ConexaoAtendimentoHospitalar"].ConnectionString;
@@ -22,7 +22,7 @@ namespace LaboratorioAlexandre.Repository.DAO
             return conexao;
         }
 
-        public int ExecutarCrud(SqlCommand comando)
+        public static int ExecutarCrud(SqlCommand comando)
         {
             SqlConnection con = Conectar();
             comando.Connection = con;
@@ -32,7 +32,7 @@ namespace LaboratorioAlexandre.Repository.DAO
             return id;
         }
 
-        public SqlDataReader ExecutarSelect(SqlCommand comando)
+        public static SqlDataReader ExecutarSelect(SqlCommand comando)
         {
             SqlConnection con = Conectar();
             comando.Connection = con;

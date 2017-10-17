@@ -1,7 +1,29 @@
-﻿
+﻿@model IEnumerable<LaboratorioAlexandre.Models.Cidade>
 @{
     ViewBag.Title = "Listar";
 }
 
-<h2>Listar</h2>
+<h2>Cidades</h2>
 
+<a href="#" class="btn btn-success">Novo</a>
+
+@Html.ActionLink("Nova Cidade", "Novo", null, new { @class="", @id=""})
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.EnumEstado)</th>
+            <th>@Html.DisplayNameFor(model => model.Nome)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(i => item.EnumEstado)</td>
+                <td>@Html.DisplayFor(i => item.Nome)</td>
+            </tr>
+        }
+        
+    </tbody>
+</table>
